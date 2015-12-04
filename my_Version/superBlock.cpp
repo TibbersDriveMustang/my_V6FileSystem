@@ -7,7 +7,7 @@
 //
 
 #include "superBlock.hpp"
-
+#include "inode.hpp"
 
 
 void write_superBlock()
@@ -66,6 +66,47 @@ int alloc_block()
     avail_blocks -- ;
     return new_block;
 }
+
+
+void fill_inode_list()
+{
+    lseek(fd, 2 * block_size, SEEK_SET);
+    int counter = 0;
+    for(int i = 0; i < (block_size / sizeof(inode)) * isize; i ++) // 16, 2048 (block size) / 128 (inode size)
+    {
+        if(counter >= 100)
+        {
+            break;
+        }
+        read(fd, &current, sizeof(current));
+        if(!flag_isSet(current.flags, ALLOC))
+        {
+            free_inodes[counter] = i + 1; // since root inode starts at 1
+            counter++; 
+        }
+    }
+    ninode = counter;
+}
+
+int get_free_inode()
+{
+    if(ninode > 0)
+    {
+        ninode--;
+        return free_inodes[ninode];
+    }
+    
+    // List is empty, so...
+    fill_inode_list();
+    if(ninode > 0)
+    {
+        return get_free_inode();
+    }
+    
+    // No inodes left!
+    return -1;
+}
+
 
 
 
