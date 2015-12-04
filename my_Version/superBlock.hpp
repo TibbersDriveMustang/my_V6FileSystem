@@ -12,20 +12,20 @@
 #include <unistd.h>
 
 
-extern int fd;
+int fd,fd2;
 unsigned short block_size = 2048;
 unsigned short avail_blocks;
 unsigned int free_blocks[100];
 unsigned int free_inodes[100];
 
-unsigned int isize , fsize, nfree, ninode, buf;
+unsigned int isize , fsize, nfree, ninode, buf,current_inode;
 
 
 void write_superBlock();
 
 void read_superBlock();
 
-int get_offset(int,int);
+//int get_offset(int);
 
 void fill_free_list(int);
 

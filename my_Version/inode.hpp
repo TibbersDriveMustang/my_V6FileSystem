@@ -45,7 +45,7 @@ enum inode_flag{
 };
 
 
-void set_flag(unsigned short*,inode_flag);
+void set_flag(unsigned short&,inode_flag);
 
 int flag_isSet(unsigned short,inode_flag);
 

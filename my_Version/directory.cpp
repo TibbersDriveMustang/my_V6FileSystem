@@ -13,6 +13,10 @@
 
 extern int fd;
 
+int get_offset(int block,int offset = 0)
+{
+    return block * block_size;
+}
 
 void add_dir_entry(int dir, int inode_num, string name)
 {
@@ -33,5 +37,7 @@ void add_dir_entry(int dir, int inode_num, string name)
     lseek(fd, 2 * block_size + (dir - 1) * sizeof(inode), SEEK_SET);
     write(fd, &current, sizeof(current));
 }
+
+
 
 

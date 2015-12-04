@@ -9,10 +9,24 @@
 #include <iostream>
 #include <sstream>
 #include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <cmath>
+#include <cstring>
+#include <stdlib.h>
+
+#include "superBlock.hpp"
+#include "inode.hpp"
+#include "directory.hpp"
 using namespace std;
 
-int fd;
+
 unsigned int temp;
+
+int get_offset(int block,int offset = 0)
+{
+    return block * block_size;
+}
 
 int main()
 {
@@ -128,7 +142,7 @@ int main()
                         }
                         else
                         {
-                            int inum = alloc_inode();
+                            int inum = get_free_inode();
                             if(inum == -1)
                             {
                                 cout << "There are no more inodes available." << endl;
@@ -214,7 +228,7 @@ int main()
                 else
                 {
                     // Create new directory inode
-                    int inum = alloc_inode();
+                    int inum = get_free_inode();
                     init_inode(inum, DIR);
                     
                     // Add to current directory
@@ -256,7 +270,7 @@ int main()
         {
             if(fs_active)
             {
-                write_super();
+                write_superBlock();
                 close(fd);
             }
             cout << "Goodbye." << endl;
@@ -279,7 +293,7 @@ int main()
                     }
                     else
                     {
-                        read_super();
+                        read_superBlock();
                         current_inode = 1;
                         fs_active = true;
                     }

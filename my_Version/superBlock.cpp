@@ -10,6 +10,9 @@
 #include "inode.hpp"
 
 
+
+
+
 void write_superBlock()
 {
     lseek(fd, 1 * block_size, SEEK_SET);
@@ -34,9 +37,9 @@ void read_superBlock()
     read(fd, free_inodes, sizeof(free_inodes));
 }
 
-int get_offset(int block,int offset=0)
+int get_offset(int block,int offset = 0)
 {
-    return block * block_size + offset;
+    return block * block_size;
 }
 
 void fill_free_list(int block_num)
