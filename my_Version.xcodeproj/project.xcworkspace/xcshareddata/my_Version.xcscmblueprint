@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FC7311305209EF75552E6EA81E96BD749A86028D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FC7311305209EF75552E6EA81E96BD749A86028D" : 0,
+    "38120B568B69BBF2C54C44C8269E5D7D058D4A93" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7F68615C-F58F-4E57-8187-8B294E12B232",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FC7311305209EF75552E6EA81E96BD749A86028D" : "my_Version\/",
+    "38120B568B69BBF2C54C44C8269E5D7D058D4A93" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "my_Version",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "my_Version.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TibbersDriveMustang\/v6FileSystem.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38120B568B69BBF2C54C44C8269E5D7D058D4A93"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TibbersDriveMustang\/my_V6FileSystem.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FC7311305209EF75552E6EA81E96BD749A86028D"
+    }
+  ]
+}
